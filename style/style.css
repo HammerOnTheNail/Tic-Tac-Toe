@@ -1,0 +1,26 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+.gamebg{
+    background-image: url(../images/game.svg);
+    background-size: cover;
+    width: 512px;
+    height: 512px;
+    border: 0px;
+    margin: 0px auto;
+}
+
+    .gamebg tr td {
+        padding: 0px;
+        margin: 0px;
+        width: 33%;
+        height: 33%;
+    }
+    
+    .gamebg tr td img{
+        width: 90%;
+        padding-left: 5%;
+        padding-top: 5%;
+    }
