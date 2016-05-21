@@ -1,6 +1,8 @@
 jQuery(function ($) {
     var actplayer = 1;
-
+    var vannyertes = false; 
+    var player1 = 0;
+    var player2 = 0;
     // Átméretezéskor arányszámítás
     $(window).resize(function () {
         if ($(window.top).innerHeight() < $(window.top).innerWidth()) {
@@ -11,7 +13,10 @@ jQuery(function ($) {
     });
 
     $('.gamebg td').on('click', function () {
-
+        //itt vizsgáljuk hogy van e nyertes
+        if (vannyertes === true){
+            return false;
+        }    
         // HA már valaki elfogallta ezt a mezőt, akkor nem megyünk tovább
         if (
                 $(this).data('player') == 1 ||
@@ -35,7 +40,7 @@ jQuery(function ($) {
         $(this).append($img);
 
         // Le ellenőrizzük, hogy a beszúrás után mi az állás
-        var vannyertes = false;
+        
         for (var playerid = 1; playerid <= 2; playerid++) {
             for (var i = 1; i <= 3; i++) {
                 if (
@@ -74,7 +79,27 @@ jQuery(function ($) {
             }
         }
         if (vannyertes == true){
-            alert('Nyert a '+playerid+' játékos!!!');
+            var winnermessage = "";
+            if (playerid === 1){
+                player1++;
+                winnermessage = "A nyertes az "+playerid+" játékos";
+            }else{
+                player2++;
+                winnermessage = "A nyertes a "+playerid+" játékos";
+            }
+            $("#dialog-end").html(winnermessage).dialog({
+                modal: true,
+                buttons: {
+                    "Új játék": function() {
+                        vannyertes = false;
+                        $('.gamebg td').html('');
+                        $('.gamebg td').data('player','');
+                        $(this).dialog("close");
+                    }
+                }
+            });
+            $("#p1").html(player1);
+            $("#p2").html(player2);
         }
     });
 

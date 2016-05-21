@@ -9,7 +9,9 @@ and open the template in the editor.
         <title>Tic Tac Toe</title>
         <meta charset="UTF-8">
         <script src="js/jquery.js"></script>
+        <script src="js/jqueryui/jquery-ui.js"></script>
         <script src="js/script.js"></script>
+        <link rel="stylesheet" type="text/css" href="js/jqueryui/jquery-ui.css">
         <link rel="stylesheet" type="text/css" href="style/style.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
@@ -31,5 +33,14 @@ and open the template in the editor.
                 <td id="33"></td>
             </tr>
         </table>
+        <table id="monitor" border="0">
+            <tr>
+                <td class="player-name">Player 1:</td><td id="p1">0</td>
+            </tr>
+            <tr>
+                <td class="player-name">Player 2:</td><td id="p2">0</td>
+            </tr>
+        </table>
+        <div id="dialog-end" title="Végeredmény!" ></div>
     </body>
 </html>
