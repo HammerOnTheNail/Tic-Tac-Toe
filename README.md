@@ -1,2 +1,2 @@
 # tictactoe
-Tic Tac Toe játék JavaScript-ben megvalósítva
+Tic-Tac-Toe játék JavaScript-ben megvalósítva
